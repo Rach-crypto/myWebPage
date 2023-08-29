@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayan Targant - Software Engineer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="page-container">
+        <section class="header" data-section="1" >
+            <h1>Welcome!</h1>
+        </section>
+
+        <section id="who-am-i" data-section="2" >
+            <h2>Who I Am:</h2>
+            <p>
+                I am a young and versatile software engineer who is passionate about coding and developing websites and desktop software. My major is Information Technology, and I hold a Bachelor's Degree in Information Systems. I thrive as a team player and enjoy tackling coding challenges. Additionally, I am proficient in typing (60+ words per minute) and possess a strong grasp of multiple languages, including English, French, Arabic, with basic knowledge of Spanish and Russian. I am well-versed in programming languages such as Python, Ruby, PHP, C, C++, Java, and JavaScript. However, my primary languages are Java (full-stack), XML/HTML/CSS, and JavaScript, with a basic understanding of the React framework.
+            </p>
+            <address>
+                <p>Email: <a href="mailto:rtargant@gmail.com">rtargant@gmail.com</a></p>
+                <p>Github: <a href="https://github.com/Rach-crypto">Rach-crypto</a></p>
+                <p>CodeForce: <a href="https://codeforces.com/profile/Rach__">Rach__</a></p>
+            </address>
+        </section>
+
+        <section id="what-i-do" data-section="3" >
+            <h2>What I Do:</h2>
+            <p>
+                I specialize in designing and developing modern desktop software for businesses using Java and JavaFX. Additionally, I create databases for websites and configure their back-ends, integrating JS scripts and CSS stylesheets. My primary back-end framework is Spring, also coded in Java.
+            </p>
+        </section>
+
+        <section id="what-i-offer" data-section="4" >
+            <h2>What I Offer:</h2>
+            <p>
+                I provide high-quality products within tight timelines and at competitive costs. My ultimate goal is to ensure customer satisfaction, regardless of the project's complexity.
+            </p>
+        </section>
+
+        <section id="my-experience" data-section="5" >
+            <h2>My Experience:</h2>
+            <p>
+                I have successfully developed two Java-based software applications for businesses, utilizing JavaFX and Swing. Furthermore, I have created a full-stack website with a PHP back-end and a MySQL database.
+            </p>
+        </section>
+
+        <section id="latest-projects" data-section="6" >
+            <h2>Latest Project Screenshots:</h2>
+            <img src="snap.png" width="40%" hspace="5px" />
+            <img src="snap2.png" width="40%" hspace="5px"/>
+        </section>
+
+
+        <section class="footer" data-section="7" >
+            <p>THANK YOU FOR VISITING THIS PAGE!😆</p>
+            <!-- <p>If you've enjoyed your visit, there's more to discover behind that door! 🤭🚪.</p> -->
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pageContainer = document.getElementById('page-container');
+            const sections = document.querySelectorAll('section');
+            let currentSection = 0;
+
+            // Function to show a specific section
+            function showSection(index) {
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+
+                const selectedSection = document.querySelector(`[data-section="${index}"]`);
+                console.log(index);
+                selectedSection.style.display = 'block';
+                selectedSection.style.marginTop = '15%';
+                selectedSection.style.animation = 'slideUpAndFade 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards';
+
+                currentSection = index;
+            }
+
+            // // Function to handle scrolling and show the appropriate section
+            // function handleScroll() {
+            //     const windowHeight = window.innerHeight;
+            //     const scrollPosition = window.scrollY;
+            //     const contentHeight = pageContainer.clientHeight;
+
+            //     if (scrollPosition + windowHeight >= contentHeight) {
+            //         showSection(sections.length); // Show the last section
+            //     } else {
+            //         const sectionToShow = Math.floor(scrollPosition / windowHeight) + 1;
+            //         showSection(sectionToShow);
+            //     }
+            // }
+
+            // Event listener for scrolling
+            // window.addEventListener('scroll', handleScroll);
+
+            // Event listener for arrow key navigation
+            window.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowUp') {
+                    showSection(Math.max(1, currentSection - 1));
+                } else if (e.key === 'ArrowDown') {
+                    showSection(Math.min(sections.length, currentSection + 1));
+                }
+            });
+
+            // Show the first section initially
+            showSection(1);
+        });
+
+    </script>
+
+
+</body>
+</html>

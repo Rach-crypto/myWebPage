@@ -1,0 +1,145 @@
+/* Reset some default browser styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a dark background color for the body */
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    margin-left:  15%;
+    margin-right: 15%;
+    padding: 0;
+    height: 100%;
+}
+
+/* Style the header with animation and abstract art */
+.header {
+    background-image: linear-gradient(45deg, #FF6B6B, #FFE66D, #59FFA0, #6DD0FF);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite;
+
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animate the header text */
+.header h1 {
+    animation: bounceAnimation 1.5s infinite;
+}
+
+/* Keyframes for the text animation */
+@keyframes bounceAnimation {
+    0%, 100% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes slideUpAndFade {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Style the main sections */
+section {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+/*     opacity: 0; */
+/*     visibility: hidden; */
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out, transform 0.6s ease-in-out;
+    transform: translateY(-20px);
+}
+
+/* Change section background color on hover */
+section:hover {
+    background-color: #444;
+}
+
+/* Style hyperlinks */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ff6347;
+    text-decoration: underline;
+}
+
+/* Style section titles */
+h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add smooth scrolling to section links */
+a.section-link {
+    cursor: pointer;
+}
+
+/* Scale section titles on hover */
+section:hover h2 {
+    transform: scale(1.02);
+}
+
+/* Style the footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Media queries for responsiveness (adjust as needed) */
+@media (max-width: 768px) {
+    section {
+        margin: 10px;
+    }
+}
+
+/* Style a container for the active section */
+#content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height to the viewport height */
+    background-color: #1a1a1a; /* Match the page background color */
+    overflow: hidden; /* Hide content that overflows the container */
+}
+
+img{
+    border-radius: 5px;
+    border: grey 1px solid;
+}
